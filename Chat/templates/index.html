@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block naslov %}
+Chat | Homepage
+{% endblock naslov %}
+
+{% block chat %}
+<h2>Previously on CHAT:</h2>
+
+{% for message in messages %}
+<div class="alert alert-info">{{ message.nickname }} : {{ message.message }}</div>
+{% endfor %}
+
+{% endblock chat %}
+
+{% block form %}
+<form method="post" action="/">
+    <input name="nickname" placeholder="Your NickName"> </input>
+    <input name="message" placeholder="Be Polite :)"> </input>
+    <button type="submit"> Submit your messsage! </button>
+</form>
+{% endblock form %}

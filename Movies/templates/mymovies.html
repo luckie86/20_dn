@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+My Movies | My Movies
+{% endblock title %}
+
+{% block mymovies %}
+class="active"
+{% endblock mymovies %}
+
+{% block content %}
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <tr>
+        <th> Title:</th>
+        <th> Cover: </th>
+        <th> Rate: </th>
+    </tr>
+
+{% for movie in movies %}
+
+      <tr>
+          <td> {{ movie.title }} </td>
+          <td> <img class="img-img responsive" width="100px" src="{{ movie.cover }}"> </td>
+          <td> {{ movie.rate }} </td>
+      </tr>
+
+
+{% endfor %}
+
+  </table>
+</div>
+
+{% endblock content %}
+

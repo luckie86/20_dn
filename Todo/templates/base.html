@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{% block naslov %} {% endblock naslov %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Welcome to TODO Task Management</h1>
+            <p>This site helps your manage your tasks</p>
+        </div>
+
+        <ul class="nav nav-pills">
+            <li role="presentation" {% block home %} {% endblock home %}><a href="/">Home</a></li>
+            <li role="presentation" {% block todo %} {% endblock todo %}><a href="/todo">TODO</a></li>
+            <li role="presentation" {% block tasks %} {% endblock tasks %}><a href="/tasks">Tasks</a></li>
+        </ul>
+
+        {% block vsebina %} {% endblock %}
+
+    </div>
+
+
+</body>
+
+</html>

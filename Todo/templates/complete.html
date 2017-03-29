@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block naslov %}
+TODO | Complete Delete
+{% endblock naslov %}
+
+
+{% block vsebina %}
+
+<h3> Completly Delete Your Task: </h3>
+
+<form method="post" action="/tasks-details/{{ task.key.id() }}/complete">
+    <h4> Name of your Task: </h4>
+    <input name="name" value="{{ task.task }}"> </input>
+    <h4>Status of your task: </h4>
+    <select name="status">
+        <option value="finished">Finished</option>
+        <option value="notfinished">Not Finished </option>
+    </select>
+    <br>
+    <br>
+    <button type="submit"> Confirm COMPLETE DELETE! </button>
+    <br>
+</form>
+
+<ul class="nav nav-pills">
+    <li>
+        <a href="/tasks"> Back to Tasks </a>
+    </li>
+</ul>
+
+{% endblock vsebina %}

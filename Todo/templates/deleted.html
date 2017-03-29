@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block naslov %}
+TODO | Deleted Tasks
+{% endblock naslov %}
+
+
+{% block vsebina %}
+
+<h3> Deleted Tasks: </h3>
+
+{% for task in del_tasks %}
+<ul class="nav nav-pills">
+    <li>
+        <br>
+        {{ task.time }} - {{ task.task }} - {{ task.status }}
+    </li>
+    <li>
+        <a href="/tasks-details/{{ task.key.id() }}/restore">Restore Task </a>
+    </li>
+    <li>
+        <a href="/tasks-details/{{ task.key.id() }}/complete">Complete delete Task </a>
+    </li>
+</ul>
+{% endfor %}
+
+{% endblock vsebina %}

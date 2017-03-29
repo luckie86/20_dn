@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block naslov %}
+Tasks | Details
+{% endblock naslov %}
+
+{% block vsebina %}
+
+<ul class="nav nav-pills">
+    <li>
+        <br>
+        {{ tasks.time }} - {{ tasks.status }} - {{ tasks.task }}
+    </li>
+    <li>
+        <a href="/tasks-details/{{ tasks.key.id() }}/edit">Edit your Task </a>
+    </li>
+    <li>
+        <a href="/tasks-details/{{ tasks.key.id() }}/delete">Delete your Task </a>
+    </li>
+</ul>
+
+{% endblock vsebina %}

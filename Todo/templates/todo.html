@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block naslov %}
+TODO | Todo
+{% endblock naslov %}
+
+{% block todo %}
+class="active"
+{% endblock todo %}
+
+{% block vsebina %}
+
+<form method="post" action="/saved">
+    <h4> Name your Task: </h4>
+    <input name="name"> </input>
+    <h4> Status of your Task: </h4>
+     <select name="status">
+        <option value="finished">Finished</option>
+        <option value="notfinished">Not Finished </option>
+    </select>
+    <br>
+    <br>
+    <button type="submit"> Submit your Task! </button>
+</form>
+
+{% endblock vsebina %}
+
+
+

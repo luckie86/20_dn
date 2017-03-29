@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+My Movies | Submit
+{% endblock title %}
+
+{% block submit %}
+class="active"
+{% endblock submit %}
+
+{% block content %}
+<form method="post" action="/submit">
+    <h4> Movie Title: </h4>
+    <input name="title"> </input>
+    <h4> Movie Cover: </h4>
+    <input name="cover"> </input>
+    <h4> Rate: </h4>
+     <select name="rate">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+    </select>
+    <br>
+    <br>
+    <button type="submit"> Submit your Movie </button>
+</form>
+{% endblock content %}

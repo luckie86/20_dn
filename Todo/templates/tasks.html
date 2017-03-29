@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block naslov %}
+TODO | Tasks
+{% endblock naslov %}
+
+{% block tasks %}
+class="active"
+{% endblock tasks %}
+
+{% block vsebina %}
+
+{% for task in tasks %}
+<dl class="dl-horizontal">
+    <br>
+    <dt>
+      <span class="text-left"> {{ task.task }} </span>
+    </dt>
+    <dd><a href="/tasks-details/{{ task.key.id() }}"> View Details </a></dd>
+</dl>
+{% endfor %}
+
+{% endblock vsebina %}
