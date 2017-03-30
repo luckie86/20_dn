@@ -19,14 +19,11 @@ class="active"
     </tr>
 
 {% for movie in movies %}
-
       <tr>
           <td> {{ movie.title }} </td>
           <td> <img class="img-img responsive" width="100px" src="{{ movie.cover }}"> </td>
           <td> {{ movie.rate }} </td>
       </tr>
-
-
 {% endfor %}
 
   </table>

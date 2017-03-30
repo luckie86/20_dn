@@ -4,14 +4,7 @@
 Chat | Homepage
 {% endblock naslov %}
 
-{% block chat %}
-<h2>Previously on CHAT:</h2>
-
-{% for message in messages %}
-<div class="alert alert-info">{{ message.nickname }} : {{ message.message }}</div>
-{% endfor %}
-
-{% endblock chat %}
+<h2>Previously, on CHAT:</h2>
 
 {% block form %}
 <form method="post" action="/">
@@ -19,4 +12,12 @@ Chat | Homepage
     <input name="message" placeholder="Be Polite :)"> </input>
     <button type="submit"> Submit your messsage! </button>
 </form>
+<br>
 {% endblock form %}
+
+{% block chat %}
+{% for message in messages|sort(attribute='time', reverse = True) %}
+<div class="alert alert-info">{{ message.nickname }}: {{ message.message }}</div>
+{% endfor %}
+{% endblock chat %}
+
